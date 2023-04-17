@@ -9,6 +9,9 @@ email: `spl.inside@gmail.com`
 
 pass: `qwerty`
 
+## View this app:
+You can view this app on Vercel https://transport-crm.vercel.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
