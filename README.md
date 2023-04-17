@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# How to use this app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Transport-crm project is built using React, Typescript, styled-components, Ant.d, Firebase. All data is stored in Firestore.
+
+You can login like admin, or you can register/login like user. There are 4 ways to login/register: standart (email is login and you need to create your password), by phone number, through Google or Facebook. After you logged in as admin, you can access 'Edit users' page, where you can add roles to users (admin/driver/passenger), and delete users. For non-admin accounts you can view all users/view all trips/create new trip.When trip is created, you can choose a driver from list and the passengers. Also, every user can delete any trip. 
+
+## Test login/pass for admin permissions:
+email: `spl.inside@gmail.com`
+
+pass: `qwerty`
+
+## View this app:
+You can view this app on Vercel https://transport-crm.vercel.app/
 
 ## Available Scripts
 
