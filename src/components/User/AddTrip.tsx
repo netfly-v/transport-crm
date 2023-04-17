@@ -5,12 +5,15 @@ import {app} from '../../constants/firebase';
 import {getFirestore, collection, addDoc} from 'firebase/firestore';
 import {useCollectionData} from 'react-firebase-hooks/firestore';
 import {UserRoles} from '../../constants/common';
+import {useNavigate} from 'react-router-dom';
+import {route} from '../../constants/route';
 const {Title} = Typography;
 
 export const AddTrip: React.FC = () => {
   const firestore = getFirestore(app);
   const [messageApi, contextHolder] = message.useMessage();
   const [users] = useCollectionData(collection(firestore, 'users'));
+  const navigate = useNavigate();
 
   const drivers = users?.filter((u) => u.role === UserRoles.DRIVER);
   const passengers = users?.filter((u) => u.role === UserRoles.PASSENGER);
@@ -21,6 +24,7 @@ export const AddTrip: React.FC = () => {
         ...values,
         date: new Date(values.date).toLocaleDateString(),
       });
+      navigate(route.viewTrips);
       messageApi.open({
         type: 'success',
         content: 'Trip added!',
